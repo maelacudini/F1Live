@@ -7,7 +7,7 @@ import { titleAnim } from "@/app/_utils/anim";
 export default function Title({ title, cname }) {
   const words = title.split(" ");
   const body = useRef(null);
-  const isInView = useInView(body, { once: false, margin: "10%" });
+  const isInView = useInView(body, { once: true, margin: "10%" });
 
   return (
     <div ref={body} className={style.title}>

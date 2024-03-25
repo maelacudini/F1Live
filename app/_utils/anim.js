@@ -25,6 +25,18 @@ export const titleAnim = {
     })
 }
 
+export const slideUp = {
+    initial: {
+        y: '5rem',
+        opacity: 0,
+    },
+    animate: (i) => ({
+        y: '0rem',
+        opacity: 1,
+        transition: { duration: 0.75, delay: 0.1 * (0.1 * i), type: "tween", ease: [0.76, 0, 0.24, 1] }
+    })
+}
+
 export const cursorAnim = {
     initial: {
         height: 0,

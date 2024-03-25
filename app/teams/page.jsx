@@ -1,3 +1,4 @@
+import CopyClipboard from "../_components/common/copyClipboard/CopyClipboard";
 import Info from "../_components/teams/info/Info";
 import Intro from "../_components/teams/intro/Intro";
 import { getData } from "../_utils/func";
@@ -14,7 +15,7 @@ export default async function Teams() {
       <Intro />
       <section className="margin">
         {constructors.map((info, i) => (
-          <Info info={info} key={i} />
+          <Info info={info} key={i} i={i} />
         ))}
       </section>
     </main>

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import CursorContainer from "../cursorContainer/CursorContainer";
 import SlidingText from "../slidingText/SlidingText";
 import style from "./footer.module.scss";
@@ -28,6 +29,13 @@ export default function Footer() {
         <CursorContainer>
           <button className="btn" onClick={scrollToTop}>
             Back to top
+            <Image
+              alt="arrow"
+              src={"/arrow.svg"}
+              width={15}
+              height={15}
+              loading="lazy"
+            />
           </button>
         </CursorContainer>
       </div>

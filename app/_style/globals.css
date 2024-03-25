@@ -105,20 +105,6 @@ h1,
   margin: 10lvh 5lvw;
 }
 
-/*card*/
-.card {
-  -webkit-backdrop-filter: blur(1rem);
-  backdrop-filter: blur(1rem);
-  background-color: #aaaaaa25;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  transition: background-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.card:hover {
-  background-color: #aaaaaa50;
-}
-
 /*not found, error, loading*/
 .notFound,
 .loading,

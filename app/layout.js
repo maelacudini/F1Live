@@ -28,7 +28,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://addwebsite.com'),
+  metadataBase: new URL('https://f1-live-eight.vercel.app/'),
   alternates: {
     canonical: '/',
     languages: {
@@ -38,11 +38,11 @@ export const metadata = {
   openGraph: {
     title: 'F1 Live',
     description: "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
-    url: 'https://addwebsite.org',
+    url: 'https://f1-live-eight.vercel.app/',
     siteName: 'F1 Live',
     images: [
       {
-        url: 'https://addwebsite.org/opengraph-image.png',
+        url: 'https://f1-live-eight.vercel.app/opengraph-image.png',
         width: 800,
         height: 600,
         alt: 'F1 Live',
@@ -60,7 +60,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'F1 Live',
     description: "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
-    images: ['https://addwebsite.org/twitter-image.png'],
+    images: ['https://f1-live-eight.vercel.app/twitter-image.png'],
   },
 };
 

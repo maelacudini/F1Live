@@ -14,7 +14,7 @@ export default async function Drivers() {
       <Intro />
       <section className="margin">
         {drivers?.map((info, i) => (
-          <Info info={info} key={i} />
+          <Info info={info} key={i} i={i} />
         ))}
       </section>
     </main>
