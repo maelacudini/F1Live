@@ -1,0 +1,11 @@
+.title {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  position: relative;
+
+  span {
+    overflow-y: hidden;
+    width: fit-content;
+  }
+}

@@ -1,0 +1,19 @@
+.header {
+  position: relative;
+  z-index: 99;
+  margin: 5lvh 5lvw;
+
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+
+    .links {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
