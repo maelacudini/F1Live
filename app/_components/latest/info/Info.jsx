@@ -1,3 +1,4 @@
+import Results from "../results/Results";
 import style from "./info.module.scss";
 
 export default function Info({ race }) {
@@ -29,35 +30,7 @@ export default function Info({ race }) {
           <p>Round</p>
           <p className="gray">{race?.round}</p>
         </div>
-        <div className={style.results}>
-          <p className="h4">Results</p>
-          <div className={style.class}>
-            {race?.Results.map((result, i) => (
-              <div key={i + result?.position} className={style.pilot}>
-                <div>
-                  <p>{result?.position}</p>
-                  <p
-                    className={
-                      result?.FastestLap?.rank === "1" ? "violet" : "gray"
-                    }
-                  >
-                    {result?.Driver?.givenName} {result?.Driver?.familyName}
-                  </p>
-                </div>
-                <div>
-                  {result?.FastestLap?.rank === "1" && (
-                    <p className="violet">
-                      <b>{result?.FastestLap?.Time?.time}</b>
-                    </p>
-                  )}
-                  <p>
-                    <b>{result?.status}</b> (L. {result?.laps})
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Results race={race} />
       </div>
     </section>
   );

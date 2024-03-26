@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Drivers",
+  title: "Calendar",
   description:
     "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
   generator: "Next.js",
@@ -13,9 +13,9 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://f1-live-eight.vercel.app/drivers"),
+  metadataBase: new URL("https://f1-live-eight.vercel.app/calendar"),
   alternates: {
-    canonical: "/drivers",
+    canonical: "/calendar",
     languages: {
       "en-US": "/en-US",
     },
@@ -24,7 +24,7 @@ export const metadata = {
     title: "F1 Live",
     description:
       "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
-    url: "https://f1-live-eight.vercel.app/drivers",
+    url: "https://f1-live-eight.vercel.app/calendar",
     siteName: "F1 Live",
     images: [
       {
@@ -51,6 +51,6 @@ export const metadata = {
   },
 };
 
-export default function DriversLayout({ children }) {
+export default function CalendarLayout({ children }) {
   return <>{children}</>;
 }

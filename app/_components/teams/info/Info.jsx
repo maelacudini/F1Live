@@ -16,8 +16,8 @@ export default function Info({ info, i }) {
       className={style.info}
     >
       <div className={style.row}>
-        <p className="h3">{info?.position}</p>
-        <p className="h2">{constructor?.name}</p>
+        <p className="h4">{info?.position}</p>
+        <p className="h3">{constructor?.name}</p>
       </div>
       <div className={style.row}>
         <p className="gray">Points</p>

@@ -56,7 +56,7 @@ h1,
 
 /* colors*/
 .red {
-  color: #b21b16;
+  color: #c52c27;
 }
 
 .violet {
@@ -106,7 +106,10 @@ h1,
 
 /*card*/
 .card {
-  border: 1px solid #aaaaaa25;
+  /* border: 1px solid #aaaaaa25; */
+  background-color: #aaaaaa15;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   border-radius: 2rem;
   padding: 2rem;
 }

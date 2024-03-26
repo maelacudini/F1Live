@@ -12,35 +12,29 @@ export default async function LatestRace() {
   return (
     <section className={`card ${style.latest}`}>
       <div className={style.intro}>
-        <div>
-          <p className="h4">Latest race</p>
-          <CursorContainer>
-            <Link href={`/latest/${race?.raceName}`} className="gray">
-              Read more
-            </Link>
-          </CursorContainer>
-        </div>
+        <p className="h4">Latest race</p>
         <p className="h2 red">{race?.raceName}</p>
       </div>
+
       <div className={style.podium}>
         <p className="h4">Podium</p>
         <div className={style.results}>
           {race?.Results?.slice(0, 3).map((pilot, i) => (
             <div className={style.result} key={i + pilot?.Driver?.givenName}>
               <p>{i + 1}</p>
-              <p key={i}>
-                {pilot?.Driver?.givenName} {pilot?.Driver?.familyName},{" "}
-                {pilot?.number}
+              <p className="gray" key={i}>
+                {pilot?.Driver?.givenName} {pilot?.Driver?.familyName}
               </p>
             </div>
           ))}
-          <CursorContainer>
-            <Link href={`/latest/${race?.raceName}`} className="gray">
-              Check the entire ranking
-            </Link>
-          </CursorContainer>
         </div>
       </div>
+
+      <CursorContainer>
+        <Link href={`/latest/${race?.raceName}`} className="btn">
+          Read more
+        </Link>
+      </CursorContainer>
     </section>
   );
 }

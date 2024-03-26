@@ -19,14 +19,14 @@ export default function Info({ info, i }) {
       viewport={{ once: true }}
       custom={i + 1}
       onClick={() => setOpen(!open)}
-      style={{ height: open ? "20rem" : "9rem" }}
+      style={{ height: open ? "20rem" : "8.5rem" }}
       className={style.info}
     >
       <div className={style.row}>
         <CursorContainer>
-          <p className="h2">{driver?.code}</p>
+          <p className="h3">{driver?.code}</p>
         </CursorContainer>
-        <p className="h3">{driver?.permanentNumber}</p>
+        <p className="h4">{driver?.permanentNumber}</p>
       </div>
       <div className={style.row}>
         <p className="gray">
