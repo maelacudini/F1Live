@@ -1,19 +1,31 @@
 .header {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 99;
   margin: 5lvh 5lvw;
 
   nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    max-width: 90rem;
-    margin: 0 auto;
-
     .links {
       display: flex;
       gap: 1rem;
+
+      div {
+        position: relative;
+
+        .dot {
+          position: absolute;
+          bottom: -0.25rem;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 0.25rem;
+          width: 0.25rem;
+          border-radius: 2rem;
+          background-color: #cecece;
+          transition: scale 0.3s;
+        }
+      }
     }
   }
 }

@@ -1,8 +1,9 @@
+import Container from "./_components/home/container/Container";
 
-export default function Home() {
+export default async function Home() {
   return (
     <main className="margin">
-      <h1>homepage</h1>
+      <Container />
     </main>
   )
 }

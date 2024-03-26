@@ -1,0 +1,24 @@
+.races {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10lvh 5lvw;
+
+  .main {
+    width: 100%;
+    max-width: 90rem;
+    border: 1px solid #aaaaaa50;
+    background-color: #aaaaaa25;
+    border-radius: 2rem;
+    padding: 2rem;
+
+    div {
+      margin: 1rem 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+  }
+}

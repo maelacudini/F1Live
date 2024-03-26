@@ -1,6 +1,5 @@
-import CopyClipboard from "../_components/common/copyClipboard/CopyClipboard";
+import Intro from "../_components/common/intro/Intro";
 import Info from "../_components/teams/info/Info";
-import Intro from "../_components/teams/intro/Intro";
 import { getData } from "../_utils/func";
 
 export default async function Teams() {
@@ -12,7 +11,11 @@ export default async function Teams() {
 
   return (
     <main>
-      <Intro />
+      <Intro
+        firstTitle={"2024"}
+        secondTitle={"Constructors"}
+        thirdTitle={"Standing"}
+      />
       <section className="margin">
         {constructors.map((info, i) => (
           <Info info={info} key={i} i={i} />

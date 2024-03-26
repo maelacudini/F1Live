@@ -1,5 +1,5 @@
+import Intro from "../_components/common/intro/Intro";
 import Info from "../_components/drivers/info/Info";
-import Intro from "../_components/drivers/intro/Intro";
 import { getData } from "../_utils/func";
 
 export default async function Drivers() {
@@ -11,7 +11,11 @@ export default async function Drivers() {
 
   return (
     <main>
-      <Intro />
+      <Intro
+        firstTitle={"2024"}
+        secondTitle={"Drivers"}
+        thirdTitle={"Standing"}
+      />
       <section className="margin">
         {drivers?.map((info, i) => (
           <Info info={info} key={i} i={i} />

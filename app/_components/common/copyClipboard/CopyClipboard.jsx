@@ -27,8 +27,8 @@ export default function CopyClipboard() {
           <Image
             alt="copy"
             src={"/copy.svg"}
-            width={25}
-            height={25}
+            width={20}
+            height={20}
             loading="lazy"
           />
         </button>
