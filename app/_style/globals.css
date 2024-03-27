@@ -28,29 +28,29 @@ button {
 
 h4,
 .h4 {
-  font-size: clamp(1.5625rem, 1.25rem + 1vw, 1.875rem);
+  font-size: clamp(1.25rem, 0.8594rem + 1.25vw, 1.5625rem);
   line-height: 1.1;
   font-weight: 600;
 }
 
 h3,
 .h3 {
-  font-size: clamp(1.875rem, 1.25rem + 2vw, 2.5rem);
+  font-size: clamp(1.875rem, 1.0938rem + 2.5vw, 2.5rem);
   line-height: 1.1;
   font-weight: 600;
 }
 
 h2,
 .h2 {
-  font-size: clamp(2.5rem, 1.875rem + 2vw, 3.125rem);
+  font-size: clamp(2.5rem, 1.7188rem + 2.5vw, 3.125rem);
   line-height: 1.1;
   font-weight: 600;
 }
 
 h1,
 .h1 {
-  font-size: clamp(3.125rem, 1.25rem + 6vw, 5rem);
-  line-height: 1;
+  font-size: clamp(3.125rem, 0.7813rem + 7.5vw, 5rem);
+  line-height: 1.1;
   font-weight: 600;
 }
 
@@ -77,10 +77,6 @@ h1,
 
 .black {
   color: #0e0e0e;
-}
-
-.uppercase {
-  text-transform: uppercase;
 }
 
 /*buttons and links*/

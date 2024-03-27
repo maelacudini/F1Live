@@ -4,6 +4,7 @@ import Header from "./_components/common/header/Header";
 import Footer from "./_components/common/footer/Footer";
 import Cursor from "./_components/common/cursor/Cursor";
 import { CursorProvider } from "./_context/CursorContext";
+import SlidingText from "./_components/common/slidingText/SlidingText";
 
 const font = Figtree({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
           <Cursor />
           {children}
           <Footer />
+          <SlidingText />
         </CursorProvider>
       </body>
     </html>

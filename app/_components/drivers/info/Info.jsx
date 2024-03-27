@@ -26,7 +26,7 @@ export default function Info({ info, i }) {
         <CursorContainer>
           <p className="h3">{driver?.code}</p>
         </CursorContainer>
-        <p className="h4">{driver?.permanentNumber}</p>
+        <p className="h3">{driver?.permanentNumber}</p>
       </div>
       <div className={style.row}>
         <p className="gray">

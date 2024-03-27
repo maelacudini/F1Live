@@ -13,9 +13,9 @@ export default async function Container() {
   return (
     <section className={style.container}>
       <LatestRace />
+      <NextRace races={races} />
       <NextPractice races={races} />
       <NextQuali races={races} />
-      <NextRace races={races} />
       <NextSprint races={races} />
     </section>
   );

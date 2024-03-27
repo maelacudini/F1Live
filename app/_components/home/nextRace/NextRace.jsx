@@ -4,19 +4,13 @@ import style from "./races.module.scss";
 export default async function NextRace({ races }) {
   const currentDate = new Date();
 
-  const previousRaces = races.filter((race) => {
-    const raceDate = new Date(race?.date);
-    return raceDate < currentDate;
-  });
-
   const upcomingRaces = races.filter((race) => {
     const raceDate = new Date(race?.date);
     return raceDate > currentDate;
   });
 
-  const previousRace =
-    previousRaces.length > 0 ? previousRaces[previousRaces?.length - 1] : null;
   const nextRace = upcomingRaces.length > 0 ? upcomingRaces[0] : null;
+  const nextRaceDate = new Date(nextRace?.date).toDateString();
 
   return (
     <article className={`card ${style.races}`}>
@@ -27,27 +21,40 @@ export default async function NextRace({ races }) {
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
       />
-      <div>
-        <p className="h4">Next Race</p>
-        {nextRace ? (
-          <p>
-            {nextRace?.raceName}, {nextRace.date}
-          </p>
-        ) : (
-          <p>No upcoming races</p>
-        )}
+      <div className={style.info}>
+        <p className="h3">
+          <span className="yellow">Next</span> race
+          <Image
+            alt="arrows"
+            src={"/arrows.svg"}
+            loading="lazy"
+            height={20}
+            width={40}
+          />
+        </p>
+        <p className="h2 yellow">{nextRace?.raceName}</p>
       </div>
-
-      <div>
-        <p className="h4">Previous Race</p>
-        {previousRace ? (
-          <p>
-            {previousRace?.raceName}, {previousRace.date}
-          </p>
-        ) : (
-          <p>No previous races</p>
-        )}
-      </div>
+      {nextRace ? (
+        <div className={style.next}>
+          <div>
+            <p>Date</p>
+            <p className="h4">{nextRaceDate}</p>
+          </div>
+          <div>
+            <p>Time</p>
+            <p className="h4">{nextRace?.time?.slice(0, 5)}</p>
+          </div>
+          <div>
+            <p>Location</p>
+            <p className="h4">
+              {nextRace?.Circuit?.Location?.country},{" "}
+              {nextRace?.Circuit?.Location?.locality}
+            </p>
+          </div>
+        </div>
+      ) : (
+        <p>No upcoming races</p>
+      )}
     </article>
   );
 }

@@ -1,8 +1,5 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  margin: 5lvh 5lvw;
 
   .main {
     max-width: 90rem;
@@ -10,7 +7,7 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 2rem;
-    margin: 5lvh 5lvw;
+    margin: 0 auto;
 
     .info {
       flex-basis: 70%;

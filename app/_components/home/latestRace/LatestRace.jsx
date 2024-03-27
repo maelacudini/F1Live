@@ -29,8 +29,30 @@ export default async function LatestRace() {
       </CursorContainer>
 
       <div className={style.intro}>
-        <p className="h4">Latest race</p>
-        <p className="h2 yellow uppercase">{race?.raceName}</p>
+        <div className={style.row}>
+          <p className="h3">
+            <Image
+              alt="arrows"
+              src={"/arrows.svg"}
+              loading="lazy"
+              height={20}
+              width={40}
+            />
+            <span className="yellow">Latest</span> race
+          </p>
+          <p className="h2 yellow">{race?.raceName}</p>
+        </div>
+
+        <div className={style.row}>
+          {race?.Results?.slice(0, 3).map((pilot, i) => (
+            <div className={style.result} key={i + pilot?.Driver?.givenName}>
+              <p>{i + 1}</p>
+              <p key={i}>
+                {pilot?.Driver?.givenName} {pilot?.Driver?.familyName}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* <div className={style.podium}>

@@ -28,16 +28,14 @@
     justify-content: space-between;
     gap: 1rem;
     width: 100%;
+
+    img {
+      transform: rotate(45deg);
+      transition: all 0.3s;
+    }
   }
 
-  img {
-    transform: rotate(45deg);
-    transition: all 0.3s;
-  }
-}
-
-@media (min-width: 600px) {
-  .info:hover {
+  &:hover {
     padding: 2rem;
 
     &::after {

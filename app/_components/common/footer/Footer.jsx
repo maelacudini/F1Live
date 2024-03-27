@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import CursorContainer from "../cursorContainer/CursorContainer";
-import SlidingText from "../slidingText/SlidingText";
 import style from "./footer.module.scss";
 import { links } from "@/app/_utils/data";
 import Link from "next/link";
@@ -50,7 +49,6 @@ export default function Footer() {
           </button>
         </CursorContainer>
       </div>
-      <SlidingText />
     </footer>
   );
 }

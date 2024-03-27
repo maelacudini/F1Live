@@ -10,6 +10,7 @@ export default function NextSprint({ races }) {
   });
 
   const nextSprint = upcomingSprint.length > 0 ? upcomingSprint[0] : null;
+  const sprintDate = new Date(nextSprint?.Sprint?.date).toDateString();
 
   return (
     <article className={`card ${style.sprint}`}>
@@ -20,8 +21,29 @@ export default function NextSprint({ races }) {
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
       />
-      <p className="h4">Next sprint</p>
-      <p>{nextSprint?.Sprint?.date}</p>
+
+      <Image
+        className={style.icon}
+        alt="arrows"
+        src={"/sprint.svg"}
+        loading="lazy"
+        height={20}
+        width={60}
+      />
+
+      <p className="h3">
+        Next <span className="yellow">sprint</span> round
+      </p>
+      <div className={style.info}>
+        <div>
+          <p>Date</p>
+          <p className="h4">{sprintDate}</p>
+        </div>
+        <div>
+          <p>Time</p>
+          <p className="h4">{nextSprint?.Sprint?.time?.slice(0, 5)}</p>
+        </div>
+      </div>
     </article>
   );
 }
