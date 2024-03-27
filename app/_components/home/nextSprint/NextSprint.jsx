@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./sprint.module.scss";
+import image from "../../../../public/images/img4.jpg";
 
 export default function NextSprint({ races }) {
   const currentDate = new Date();
@@ -17,9 +18,10 @@ export default function NextSprint({ races }) {
       <Image
         className={style.bg}
         alt="background"
-        src={"/images/img4.jpg"}
+        src={image}
+        placeholder="blur"
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 768px) 20rem, (max-width: 1200px) 30rem"
       />
 
       <Image

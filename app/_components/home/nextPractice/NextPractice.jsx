@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./practice.module.scss";
+import image from "../../../../public/images/img1.jpg";
 
 export default function NextPractice({ races }) {
   const currentDate = new Date();
@@ -26,9 +27,10 @@ export default function NextPractice({ races }) {
       <Image
         className={style.bg}
         alt="background"
-        src={"/images/img1.jpg"}
+        src={image}
+        placeholder="blur"
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 768px) 25rem, (max-width: 1200px) 30rem"
       />
 
       <Image

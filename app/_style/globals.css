@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  display: none !important;
+  display: none;
 }
 
 * {
@@ -16,6 +16,22 @@ body {
   cursor: default;
 }
 
+/* custom bg of highlighted text */
+::selection {
+  background-color: #cedc00;
+  color: #0e0e0e;
+}
+
+::-moz-selection {
+  background-color: #cedc00;
+  color: #0e0e0e;
+}
+
+::webkit-selection {
+  background-color: #cedc00;
+  color: #0e0e0e;
+}
+
 /*fonts*/
 p,
 a,
@@ -24,6 +40,7 @@ button {
   font-weight: 300;
   text-decoration: none;
   color: inherit;
+  font-family: inherit;
 }
 
 h4,
@@ -83,7 +100,6 @@ h1,
 .btn {
   background-color: transparent;
   border: 1px solid #aaaaaa25;
-  font-family: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,7 +116,6 @@ h1,
 }
 
 .link {
-  text-decoration: none;
   transition: color 0.3s;
 }
 
@@ -110,8 +125,6 @@ h1,
 
 /*card*/
 .card {
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
   border-radius: 2rem;
   padding: 2rem;
   overflow: hidden;

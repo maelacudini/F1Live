@@ -3,6 +3,7 @@ import style from "./latest.module.scss";
 import CursorContainer from "../../common/cursorContainer/CursorContainer";
 import Link from "next/link";
 import Image from "next/image";
+import image from "../../../../public/images/img.jpg";
 
 export default async function LatestRace() {
   const data = await getData(
@@ -15,11 +16,12 @@ export default async function LatestRace() {
       <Image
         className={style.bg}
         alt="background"
-        src={"/images/img.jpg"}
+        src={image}
+        placeholder="blur"
         fill
         loading="eager"
         priority
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 768px) 35rem, (max-width: 1200px) 40rem"
       />
 
       <CursorContainer>

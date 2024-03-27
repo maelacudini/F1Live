@@ -1,7 +1,6 @@
 import Image from "next/image";
 import style from "./quali.module.scss";
-import CursorContainer from "../../common/cursorContainer/CursorContainer";
-import Link from "next/link";
+import image from "../../../../public/images/img2.jpg";
 
 export default function NextQuali({ races }) {
   const currentDate = new Date();
@@ -19,9 +18,10 @@ export default function NextQuali({ races }) {
       <Image
         className={style.bg}
         alt="background"
-        src={"/images/img2.jpg"}
+        src={image}
+        placeholder="blur"
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 768px) 20rem, (max-width: 1200px) 30rem"
       />
 
       <Image

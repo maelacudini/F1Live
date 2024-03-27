@@ -1,5 +1,6 @@
 import Image from "next/image";
 import style from "./races.module.scss";
+import image from "../../../../public/images/img3.jpg";
 
 export default async function NextRace({ races }) {
   const currentDate = new Date();
@@ -17,9 +18,10 @@ export default async function NextRace({ races }) {
       <Image
         className={style.bg}
         alt="background"
-        src={"/images/img3.jpg"}
+        src={image}
+        placeholder="blur"
         fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+        sizes="(max-width: 768px) 35rem, (max-width: 1200px) 40rem"
       />
       <div className={style.info}>
         <p className="h3">
