@@ -1,3 +1,4 @@
+import Image from "next/image";
 import style from "./practice.module.scss";
 
 export default function NextPractice({ races }) {
@@ -12,10 +13,19 @@ export default function NextPractice({ races }) {
 
   return (
     <article className={`card ${style.practice}`}>
+      <Image
+        className={style.bg}
+        alt="background"
+        src={"/images/img1.jpg"}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+      />
+
       <div className={style.intro}>
         <p className="h4">Next practice rounds</p>
         <p className="h2">
-          for the <span className="red">{nextPractice?.raceName}</span>
+          for the{" "}
+          <span className="yellow uppercase">{nextPractice?.raceName}</span>
         </p>
       </div>
       {nextPractice && (

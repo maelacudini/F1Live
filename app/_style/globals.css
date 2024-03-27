@@ -114,12 +114,15 @@ h1,
 
 /*card*/
 .card {
-  /* border: 1px solid #aaaaaa25; */
-  background-color: #aaaaaa15;
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
   border-radius: 2rem;
   padding: 2rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  outline: 1px solid #aaaaaa25;
 }
 
 /*section margin*/

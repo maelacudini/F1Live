@@ -1,3 +1,4 @@
+import Image from "next/image";
 import style from "./races.module.scss";
 
 export default async function NextRace({ races }) {
@@ -19,6 +20,13 @@ export default async function NextRace({ races }) {
 
   return (
     <article className={`card ${style.races}`}>
+      <Image
+        className={style.bg}
+        alt="background"
+        src={"/images/img3.jpg"}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+      />
       <div>
         <p className="h4">Next Race</p>
         {nextRace ? (

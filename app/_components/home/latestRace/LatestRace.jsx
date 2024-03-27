@@ -2,6 +2,7 @@ import { getData } from "@/app/_utils/func";
 import style from "./latest.module.scss";
 import CursorContainer from "../../common/cursorContainer/CursorContainer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default async function LatestRace() {
   const data = await getData(
@@ -11,6 +12,16 @@ export default async function LatestRace() {
 
   return (
     <section className={`card ${style.latest}`}>
+      <Image
+        className={style.bg}
+        alt="background"
+        src={"/images/img.jpg"}
+        fill
+        loading="eager"
+        priority
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+      />
+
       <CursorContainer>
         <Link href={`/latest/${race?.raceName}`} className="btn">
           Race details
@@ -19,7 +30,7 @@ export default async function LatestRace() {
 
       <div className={style.intro}>
         <p className="h4">Latest race</p>
-        <p className="h2 uppercase">FORMULA 1 {race?.raceName}</p>
+        <p className="h2 yellow uppercase">{race?.raceName}</p>
       </div>
 
       {/* <div className={style.podium}>

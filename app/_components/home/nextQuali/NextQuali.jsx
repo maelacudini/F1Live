@@ -1,3 +1,4 @@
+import Image from "next/image";
 import style from "./quali.module.scss";
 
 export default function NextQuali({ races }) {
@@ -12,6 +13,13 @@ export default function NextQuali({ races }) {
 
   return (
     <article className={`card ${style.quali}`}>
+      <Image
+        className={style.bg}
+        alt="background"
+        src={"/images/img2.jpg"}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+      />
       <p className="h4">Next quali</p>
       <p>{nextQuali?.Qualifying?.date}</p>
     </article>
