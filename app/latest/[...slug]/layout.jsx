@@ -11,9 +11,9 @@ export async function generateMetadata({ params }) {
     description:
       race?.Circuit?.circuitName + ", " + race?.Circuit?.Location?.locality,
     generator: "Next.js",
-    applicationName: "F1 Live",
+    applicationName: "Flive",
     referrer: "origin-when-cross-origin",
-    keywords: ["Next.js", "React", "JavaScript", "F1"],
+    keywords: ["Next.js", "React", "JavaScript"],
     authors: [{ name: "Maela", url: "https://maelacudini.com" }],
     creator: "Maela",
     formatDetection: {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
       telephone: false,
     },
     metadataBase: new URL(
-      `https://f1-live-eight.vercel.app/latest/${race?.raceName}`
+      `https://flive-eight.vercel.app/latest/${race?.raceName}`
     ),
     alternates: {
       canonical: `/latest/${race?.raceName}`,
@@ -31,17 +31,17 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: "F1 Live",
+      title: "Flive",
       description:
         race?.Circuit?.circuitName + ", " + race?.Circuit?.Location?.locality,
-      url: `https://f1-live-eight.vercel.app/latest/${race?.raceName}`,
-      siteName: "F1 Live",
+      url: `https://flive-eight.vercel.app/latest/${race?.raceName}`,
+      siteName: "Flive",
       images: [
         {
-          url: "https://f1-live-eight.vercel.app/opengraph-image.png",
+          url: "https://flive-eight.vercel.app/opengraph-image.png",
           width: 800,
           height: 600,
-          alt: "F1 Live",
+          alt: "Flive",
         },
       ],
       locale: "en_US",
@@ -54,10 +54,10 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: "F1 Live",
+      title: "Flive",
       description:
         race?.Circuit?.circuitName + ", " + race?.Circuit?.Location?.locality,
-      images: ["https://f1-live-eight.vercel.app/twitter-image.png"],
+      images: ["https://flive-eight.vercel.app/twitter-image.png"],
     },
   };
 }

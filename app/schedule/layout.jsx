@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Teams",
+  title: "Schedule",
   description:
     "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
   generator: "Next.js",
@@ -13,9 +13,9 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://flive-eight.vercel.app/teams"),
+  metadataBase: new URL("https://flive-eight.vercel.app/schedule"),
   alternates: {
-    canonical: "/teams",
+    canonical: "/schedule",
     languages: {
       "en-US": "/en-US",
     },
@@ -24,7 +24,7 @@ export const metadata = {
     title: "Flive",
     description:
       "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
-    url: "https://flive-eight.vercel.app/teams",
+    url: "https://flive-eight.vercel.app/calendar",
     siteName: "Flive",
     images: [
       {
@@ -51,6 +51,6 @@ export const metadata = {
   },
 };
 
-export default function TeamsLayout({ children }) {
+export default function CalendarLayout({ children }) {
   return <>{children}</>;
 }

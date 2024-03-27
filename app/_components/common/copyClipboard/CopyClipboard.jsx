@@ -20,19 +20,21 @@ export default function CopyClipboard() {
   };
 
   return (
-    <CursorContainer>
-      <div className={style.copy}>
-        <button className="btn" onClick={copylink}>
-          {copyText}
-          <Image
-            alt="copy"
-            src={"/copy.svg"}
-            width={20}
-            height={20}
-            loading="lazy"
-          />
-        </button>
+    <div className={style.copy}>
+      <div className={style.main}>
+        <CursorContainer>
+          <button className="btn" onClick={copylink}>
+            {copyText}
+            <Image
+              alt="copy"
+              src={"/copy.svg"}
+              width={20}
+              height={20}
+              loading="lazy"
+            />
+          </button>
+        </CursorContainer>
       </div>
-    </CursorContainer>
+    </div>
   );
 }

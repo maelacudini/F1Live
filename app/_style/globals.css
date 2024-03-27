@@ -59,6 +59,10 @@ h1,
   color: #c52c27;
 }
 
+.yellow {
+  color: #cedc00;
+}
+
 .violet {
   color: rgb(186, 95, 255);
 }
@@ -73,6 +77,10 @@ h1,
 
 .black {
   color: #0e0e0e;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /*buttons and links*/

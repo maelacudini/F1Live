@@ -20,12 +20,10 @@ export default function Footer() {
         <div className={style.info}>
           <p className="h4">Disclaimer</p>
           <p className="gray">
-            This web application is not affiliated in any way with Formula 1.
-            The information provided is sourced from the{" "}
-            <i>Ergast Developer API</i>, and I do not claim ownership of any
-            data mentioned. This project is a creative work and is not intended
-            for commercial use. I am not making any money from this project nor
-            do I intend to make a profit.
+            This website is unofficial and is not associated in any way with the
+            Formula 1 companies. F1, FORMULA ONE, FORMULA 1, FIA FORMULA ONE
+            WORLD CHAMPIONSHIP, GRAND PRIX and related marks are trade marks of
+            Formula One Licensing B.V.
           </p>
 
           <div className={style.links}>

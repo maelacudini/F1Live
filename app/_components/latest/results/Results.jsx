@@ -3,7 +3,7 @@ import style from "./results.module.scss";
 export default function Results({ race }) {
   return (
     <div className={style.results}>
-      <p className="h4">Results</p>
+      <p className="h4">Standings</p>
       <div>
         {race?.Results.map((result, i) => (
           <div key={i + result?.position} className={style.result}>

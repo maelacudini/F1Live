@@ -7,9 +7,8 @@ export default function Intro({ firstTitle, secondTitle, thirdTitle }) {
     <section className={style.intro}>
       <div className={style.main}>
         <Title title={firstTitle} />
-        <Title cname={"red"} title={secondTitle} />
+        <Title cname={"yellow"} title={secondTitle} />
         <Title title={thirdTitle} />
-        <CopyClipboard />
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ export default function SlidingText() {
       }
       gsap.set(firstSlide.current, { xPercent: xPercent });
       gsap.set(secondSlide.current, { xPercent: xPercent });
-      xPercent += 0.05 * direction;
+      xPercent += 0.03 * direction;
       animationId = requestAnimationFrame(animate);
     };
 
@@ -39,13 +39,13 @@ export default function SlidingText() {
         <p ref={firstSlide} className="h1">
           <i>
             F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1
-            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live
+            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live &nbsp;
           </i>
         </p>
         <p ref={secondSlide} className="h1">
           <i>
             F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1
-            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live
+            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live &nbsp;
           </i>
         </p>
       </div>

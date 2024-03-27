@@ -1,8 +1,13 @@
 .copy {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 2rem;
+  justify-content: center;
+  margin: 10lvh 5lvw;
+
+  .main {
+    width: 100%;
+    max-width: 90rem;
+    display: flex;
+    justify-content: flex-end;
+  }
 }

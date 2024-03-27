@@ -21,7 +21,7 @@ export default function Info({ info, i }) {
       </div>
       <div className={style.row}>
         <p className="gray">Points</p>
-        <p>{info?.points}</p>
+        <p className="gray">{info?.points}</p>
       </div>
     </motion.article>
   );

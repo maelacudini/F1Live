@@ -13,14 +13,14 @@ export const viewport = {
 
 export const metadata = {
   title: {
-    template: '%s | F1 Live',
-    default: 'F1 Live'
+    template: '%s | Flive',
+    default: 'Flive'
   },
-  description: "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
+  description: "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
   generator: 'Next.js',
-  applicationName: 'F1 Live',
+  applicationName: 'Flive',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Next.js', 'React', 'JavaScript', 'F1'],
+  keywords: ['Next.js', 'React', 'JavaScript'],
   authors: [{ name: 'Maela', url: 'https://maelacudini.com' }],
   creator: 'Maela',
   formatDetection: {
@@ -28,7 +28,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://f1-live-eight.vercel.app/'),
+  metadataBase: new URL('https://flive-eight.vercel.app/'),
   alternates: {
     canonical: '/',
     languages: {
@@ -36,16 +36,16 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'F1 Live',
-    description: "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
-    url: 'https://f1-live-eight.vercel.app/',
-    siteName: 'F1 Live',
+    title: 'Flive',
+    description: "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
+    url: 'https://flive-eight.vercel.app/',
+    siteName: 'Flive',
     images: [
       {
-        url: 'https://f1-live-eight.vercel.app/opengraph-image.png',
+        url: 'https://flive-eight.vercel.app/opengraph-image.png',
         width: 800,
         height: 600,
-        alt: 'F1 Live',
+        alt: 'Flive',
       },
     ],
     locale: 'en_US',
@@ -58,9 +58,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'F1 Live',
-    description: "F1 Live is the ultimate companion for Formula 1 enthusiasts. Stay ahead of the curve with the latest race results, sprint outcomes, championship standings, and more.",
-    images: ['https://f1-live-eight.vercel.app/twitter-image.png'],
+    title: 'Flive',
+    description: "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
+    images: ['https://flive-eight.vercel.app/twitter-image.png'],
   },
 };
 
