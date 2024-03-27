@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import style from "./sliding.module.scss";
 import gsap from "gsap";
+import Image from "next/image";
 
 export default function SlidingText() {
   const firstSlide = useRef(null);
@@ -20,7 +21,7 @@ export default function SlidingText() {
       }
       gsap.set(firstSlide.current, { xPercent: xPercent });
       gsap.set(secondSlide.current, { xPercent: xPercent });
-      xPercent += 0.03 * direction;
+      xPercent += 0.04 * direction;
       animationId = requestAnimationFrame(animate);
     };
 
@@ -36,16 +37,16 @@ export default function SlidingText() {
   return (
     <section className={style.main}>
       <div className={style.slider}>
-        <p ref={firstSlide} className="h1">
+        <p ref={firstSlide} className="h1 yellow">
           <i>
-            F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1
-            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live &nbsp;
+            Flive Flive Flive Flive Flive Flive Flive Flive Flive Flive Flive
+            Flive Flive Flive Flive&nbsp;
           </i>
         </p>
-        <p ref={secondSlide} className="h1">
+        <p ref={secondSlide} className="h1 yellow">
           <i>
-            F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1
-            Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live F1 Live &nbsp;
+            Flive Flive Flive Flive Flive Flive Flive Flive Flive Flive Flive
+            Flive Flive Flive Flive&nbsp;
           </i>
         </p>
       </div>

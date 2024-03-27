@@ -1,3 +1,4 @@
+import CopyClipboard from "@/app/_components/common/copyClipboard/CopyClipboard";
 import Intro from "@/app/_components/common/intro/Intro";
 import Info from "@/app/_components/latest/info/Info";
 import { getData } from "@/app/_utils/func";
@@ -15,6 +16,7 @@ export default async function Latest() {
         secondTitle={"Race"}
         thirdTitle={"of the Year"}
       />
+      <CopyClipboard />
       <Info race={race} />
     </main>
   );

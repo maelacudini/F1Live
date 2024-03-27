@@ -2,9 +2,9 @@ export default function robots() {
     return {
         rules: {
             userAgent: '*',
-            allow: '/',
-            disallow: '/private/',
+            // allow: '/',
+            disallow: '/',
         },
-        sitemap: 'https://acme.com/sitemap.xml',
+        sitemap: 'https://flive-eight.vercel.app/sitemap.xml',
     }
 }

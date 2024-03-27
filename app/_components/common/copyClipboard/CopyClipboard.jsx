@@ -7,7 +7,7 @@ import { useState } from "react";
 
 export default function CopyClipboard() {
   const path = usePathname();
-  const base = "https://f1-live-eight.vercel.app";
+  const base = "https://flive-eight.vercel.app";
   const links = base + path;
   const [copyText, setCopyText] = useState("Copy and share");
 
