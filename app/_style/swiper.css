@@ -1,0 +1,62 @@
+.swiper {
+  height: 24rem;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.swiper::after {
+  content: "";
+  background: linear-gradient(
+    to left,
+    #0e0e0e,
+    #0e0e0e50,
+    #0e0e0e25,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e00,
+    #0e0e0e25,
+    #0e0e0e50,
+    #0e0e0e
+  );
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  height: 100%;
+  z-index: 79;
+  pointer-events: none;
+}
+
+.swiper-slide {
+  height: 20rem !important;
+  width: 15rem !important;
+  border: 1px solid #aaaaaa25;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: clamp(1rem, 0.875rem + 0.4vw, 1.125rem) !important;
+  color: #ececec;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute !important;
+  bottom: 0 !important;
+  top: unset !important;
+  z-index: 80 !important;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}

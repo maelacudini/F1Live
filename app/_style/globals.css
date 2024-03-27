@@ -72,10 +72,6 @@ h1,
 }
 
 /* colors*/
-.red {
-  color: #c52c27;
-}
-
 .yellow {
   color: #cedc00;
 }
@@ -131,7 +127,7 @@ h1,
 }
 
 .card:hover {
-  outline: 1px solid #aaaaaa25;
+  border: 1px solid #aaaaaa25;
 }
 
 /*section margin*/

@@ -1,5 +1,6 @@
 import { Figtree } from "next/font/google";
 import "./_style/globals.css";
+import "./_style/swiper.css";
 import Header from "./_components/common/header/Header";
 import Footer from "./_components/common/footer/Footer";
 import Cursor from "./_components/common/cursor/Cursor";

@@ -1,0 +1,17 @@
+.qualis {
+  margin: 2rem auto;
+  max-width: 90rem;
+
+  .quali {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+}
