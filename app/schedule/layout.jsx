@@ -24,7 +24,7 @@ export const metadata = {
     title: "Flive",
     description:
       "Flive is the ultimate companion for motor sport enthusiasts. Stay ahead of the curve with the latest races, driver standings, championship updates, and more.",
-    url: "https://flive-eight.vercel.app/calendar",
+    url: "https://flive-eight.vercel.app/schedule",
     siteName: "Flive",
     images: [
       {
