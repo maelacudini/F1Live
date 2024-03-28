@@ -42,7 +42,9 @@ export default async function LatestRace() {
             />
             <span className="yellow">Latest</span> race
           </p>
-          <p className="h2 yellow">{race?.raceName}</p>
+          <p className="h2">
+            At the <span className="yellow">{race?.Circuit?.circuitName}</span>
+          </p>
         </div>
 
         <div className={style.row}>
@@ -56,20 +58,6 @@ export default async function LatestRace() {
           ))}
         </div>
       </div>
-
-      {/* <div className={style.podium}>
-        <p className="h4">Podium</p>
-        <div className={style.results}>
-          {race?.Results?.slice(0, 3).map((pilot, i) => (
-            <div className={style.result} key={i + pilot?.Driver?.givenName}>
-              <p>{i + 1}</p>
-              <p className="gray" key={i}>
-                {pilot?.Driver?.givenName} {pilot?.Driver?.familyName}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </section>
   );
 }

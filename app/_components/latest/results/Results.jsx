@@ -15,11 +15,11 @@ export default function Results({ race }) {
                 </p>
               </div>
               <div>
-                {result?.FastestLap?.rank === "1" && (
+                {/* {result?.FastestLap?.rank === "1" && (
                   <p className="violet">
                     <b>{result?.FastestLap?.Time?.time}</b>
                   </p>
-                )}
+                )} */}
                 <p>
                   <b>{result?.status}</b>
                 </p>

@@ -19,7 +19,7 @@ export default function Info({ race }) {
         <div className={style.row}>
           <p>Local Date and Time</p>
           <p className="gray">
-            {race?.date}, {race?.time}
+            {race?.date}, {race?.time?.slice(0, 5)}
           </p>
         </div>
         <div className={style.row}>

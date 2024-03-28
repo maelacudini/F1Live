@@ -34,6 +34,12 @@ export default function Footer() {
               </CursorContainer>
             ))}
           </div>
+
+          <CursorContainer>
+            <a className="link" href="https://www.formula1.com/">
+              FORMULA 1 Official Website
+            </a>
+          </CursorContainer>
         </div>
         <CursorContainer>
           <button className="btn" onClick={scrollToTop}>

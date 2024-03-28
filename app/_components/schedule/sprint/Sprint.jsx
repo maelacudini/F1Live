@@ -32,7 +32,11 @@ export default function Sprint({ races }) {
                 <div className={style.sprint}>
                   <p>Round {race?.round}</p>
                   <div>
-                    <p className="h4">At the {race?.Circuit?.circuitName}</p>
+                    <p className="h4">
+                      {" "}
+                      At the {race?.Circuit?.circuitName},{" "}
+                      {race?.Circuit?.Location?.locality}
+                    </p>
                     <p>
                       {date}, {race?.Sprint?.time?.slice(0, 5)}
                     </p>

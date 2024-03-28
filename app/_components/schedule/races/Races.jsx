@@ -45,7 +45,10 @@ export default function Races({ races }) {
                   ) : null}
                 </div>
                 <div>
-                  <p className="h4">{race?.raceName}</p>
+                  <p className="h4">
+                    At the {race?.Circuit?.circuitName},{" "}
+                    {race?.Circuit?.Location?.locality}
+                  </p>
                   <p>
                     {date}, {race?.time?.slice(0, 5)}
                   </p>

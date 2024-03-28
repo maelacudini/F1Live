@@ -45,7 +45,11 @@ export default function Quali({ races }) {
                   ) : null}
                 </div>
                 <div>
-                  <p className="h4">For the {race?.raceName}</p>
+                  <p className="h4">
+                    {" "}
+                    At the {race?.Circuit?.circuitName},{" "}
+                    {race?.Circuit?.Location?.locality}
+                  </p>
                   <p>
                     {date}, {race?.Qualifying?.time?.slice(0, 5)}
                   </p>

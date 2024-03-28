@@ -34,7 +34,10 @@ export default async function NextRace({ races }) {
             width={40}
           />
         </p>
-        <p className="h2 yellow">{nextRace?.raceName}</p>
+        <p className="h2">
+          At the{" "}
+          <span className="yellow">{nextRace?.Circuit?.circuitName}</span>
+        </p>
       </div>
       {nextRace ? (
         <div className={style.next}>

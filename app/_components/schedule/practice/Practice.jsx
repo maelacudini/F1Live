@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Practice({ races }) {
   const currentDate = new Date();
@@ -40,8 +41,8 @@ export default function Practice({ races }) {
           ).toDateString();
           const thirdDate = new Date(race?.ThirdPractice?.date).toDateString();
           return (
-            <>
-              <SwiperSlide key={i + race?.raceName} className="card">
+            <span key={uuidv4()}>
+              <SwiperSlide key={uuidv4()} className="card">
                 <div className={style.practice}>
                   <div className={style.intro}>
                     <p>Round {race?.round}</p>
@@ -50,14 +51,18 @@ export default function Practice({ races }) {
                     ) : null}
                   </div>
                   <div>
-                    <p className="h4">For the {race?.raceName}</p>
+                    <p className="h4">
+                      {" "}
+                      At the {race?.Circuit?.circuitName},{" "}
+                      {race?.Circuit?.Location?.locality}
+                    </p>
                     <p>
                       {firstDate}, {race?.FirstPractice?.time?.slice(0, 5)}
                     </p>
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide key={i + race?.raceName} className="card">
+              <SwiperSlide key={uuidv4()} className="card">
                 <div className={style.practice}>
                   <div className={style.intro}>
                     <p>Round {race?.round}</p>
@@ -66,14 +71,18 @@ export default function Practice({ races }) {
                     ) : null}
                   </div>
                   <div>
-                    <p className="h4">For the {race?.raceName}</p>
+                    <p className="h4">
+                      {" "}
+                      At the {race?.Circuit?.circuitName},{" "}
+                      {race?.Circuit?.Location?.locality}
+                    </p>
                     <p>
                       {secondDate}, {race?.SecondPractice?.time?.slice(0, 5)}
                     </p>
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide key={i + race?.raceName} className="card">
+              <SwiperSlide key={uuidv4()} className="card">
                 <div className={style.practice}>
                   <div className={style.intro}>
                     <p>Round {race?.round}</p>
@@ -82,14 +91,18 @@ export default function Practice({ races }) {
                     ) : null}
                   </div>
                   <div>
-                    <p className="h4">For the {race?.raceName}</p>
+                    <p className="h4">
+                      {" "}
+                      At the {race?.Circuit?.circuitName},{" "}
+                      {race?.Circuit?.Location?.locality}
+                    </p>
                     <p>
                       {thirdDate}, {race?.ThirdPractice?.time?.slice(0, 5)}
                     </p>
                   </div>
                 </div>
               </SwiperSlide>
-            </>
+            </span>
           );
         })}
       </Swiper>
