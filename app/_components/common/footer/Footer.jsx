@@ -41,10 +41,9 @@ export default function Footer() {
             <Image
               alt="arrow"
               src={"/arrow.svg"}
-              width={15}
-              height={15}
+              width={10}
+              height={10}
               loading="lazy"
-              style={{ transform: "rotate(-45deg)" }}
             />
           </button>
         </CursorContainer>

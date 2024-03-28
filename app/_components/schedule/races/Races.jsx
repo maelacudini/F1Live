@@ -39,9 +39,9 @@ export default function Races({ races }) {
             <SwiperSlide key={i + race?.raceName} className="card">
               <div className={style.race}>
                 <div className={style.intro}>
-                  <p className="h4">{race?.round}</p>
+                  <p>Round {race?.round}</p>
                   {nextRace?.raceName === race?.raceName ? (
-                    <span className="yellow">Next race</span>
+                    <p className="yellow">Upcoming</p>
                   ) : null}
                 </div>
                 <div>

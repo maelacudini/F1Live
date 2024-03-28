@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 export default function Quali({ races }) {
   const currentDate = new Date();
 
-  const upcomingQuali = races.filter((race) => {
-    const qualiDate = new Date(race?.date);
-    return qualiDate > currentDate;
+  const upcomingRaces = races.filter((race) => {
+    const raceDate = new Date(race?.date);
+    return raceDate > currentDate;
   });
 
-  const nextQuali = upcomingQuali.length > 0 ? upcomingQuali[0] : null;
+  const nextRace = upcomingRaces.length > 0 ? upcomingRaces[0] : null;
 
   return (
     <section className={style.qualis}>
@@ -39,9 +39,9 @@ export default function Quali({ races }) {
             <SwiperSlide key={i + race?.raceName} className="card">
               <div className={style.quali}>
                 <div className={style.intro}>
-                  <p className="h4">{race?.round}</p>
-                  {nextQuali?.raceName === race?.raceName ? (
-                    <span className="yellow">Next quali</span>
+                  <p>Round {race?.round}</p>
+                  {nextRace?.raceName === race?.raceName ? (
+                    <p className="yellow">Upcoming</p>
                   ) : null}
                 </div>
                 <div>

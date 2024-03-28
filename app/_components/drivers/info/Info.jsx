@@ -39,7 +39,10 @@ export default function Info({ info, i }) {
             width={15}
             height={15}
             loading="lazy"
-            style={{ transform: open ? "rotate(-45deg)" : "" }}
+            style={{
+              transform: open ? "rotate(90deg)" : "",
+              transition: "all 0.3s",
+            }}
           />
         </CursorContainer>
       </div>
