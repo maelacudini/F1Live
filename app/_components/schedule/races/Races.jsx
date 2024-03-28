@@ -6,9 +6,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 export default function Races({ races }) {
+  const currentDate = new Date();
+
+  const upcomingRaces = races.filter((race) => {
+    const raceDate = new Date(race?.date);
+    return raceDate > currentDate;
+  });
+
+  const nextRace = upcomingRaces.length > 0 ? upcomingRaces[0] : null;
+
   return (
     <section className={style.races}>
-      <p className="h2 yellow">Races</p>
+      <div className={style.title}>
+        <p className="h2">
+          2024 <span className="yellow">Races</span>
+        </p>
+      </div>
 
       <Swiper
         slidesPerView={"auto"}
@@ -25,7 +38,12 @@ export default function Races({ races }) {
           return (
             <SwiperSlide key={i + race?.raceName} className="card">
               <div className={style.race}>
-                <p className="h4">{race?.round}</p>
+                <div className={style.intro}>
+                  <p className="h4">{race?.round}</p>
+                  {nextRace?.raceName === race?.raceName ? (
+                    <span className="yellow">Next race</span>
+                  ) : null}
+                </div>
                 <div>
                   <p className="h4">{race?.raceName}</p>
                   <p>

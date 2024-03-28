@@ -7,7 +7,7 @@ export default async function Schedule() {
   const races = res?.MRData?.RaceTable?.Races;
 
   return (
-    <main className="margin">
+    <main>
       <Races races={races} />
       <Quali races={races} />
     </main>

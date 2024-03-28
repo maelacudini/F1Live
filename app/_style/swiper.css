@@ -1,7 +1,6 @@
 .swiper {
   height: 24rem;
   position: relative;
-  margin-top: 1rem;
 }
 
 .swiper::after {
@@ -54,9 +53,19 @@
 }
 
 .swiper-button-prev {
-  left: 0;
+  left: 5lvw !important;
 }
 
 .swiper-button-next {
-  right: 0;
+  right: 5lvw !important;
+}
+
+@media (min-width: 125rem) {
+  .swiper-button-prev {
+    left: 20lvw !important;
+  }
+
+  .swiper-button-next {
+    right: 20lvw !important;
+  }
 }
