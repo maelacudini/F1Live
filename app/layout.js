@@ -30,6 +30,7 @@ export const metadata = {
     address: false,
     telephone: false,
   },
+  manifest: 'https://flive-eight.vercel.app/manifest.json',
   metadataBase: new URL('https://flive-eight.vercel.app/'),
   alternates: {
     canonical: '/',
