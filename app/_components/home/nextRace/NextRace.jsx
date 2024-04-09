@@ -13,6 +13,12 @@ export default async function NextRace({ races }) {
   const nextRace = upcomingRaces.length > 0 ? upcomingRaces[0] : null;
   const nextRaceDate = new Date(nextRace?.date).toDateString();
 
+  //get correct hour
+  const raceTime = nextRace?.time.slice(0, 5);
+  const [hours, minutes] = raceTime.split(":");
+  const adjustedHours = (parseInt(hours) + 2) % 24;
+  const adjustedTime = `0${adjustedHours}:${minutes}`;
+
   return (
     <article className={`card ${style.races}`}>
       <Image
@@ -47,7 +53,7 @@ export default async function NextRace({ races }) {
           </div>
           <div>
             <p>Time</p>
-            <p className="h4">{nextRace?.time?.slice(0, 5)}</p>
+            <p className="h4">{adjustedTime}</p>
           </div>
           <div>
             <p>Location</p>

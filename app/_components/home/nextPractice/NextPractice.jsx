@@ -22,6 +22,33 @@ export default function NextPractice({ races }) {
     nextPractice?.ThirdPractice?.date
   ).toDateString();
 
+  //get correct hour first pr
+  let firstPrFinalTime;
+  if (nextPractice?.FirstPractice?.time) {
+    const firstPrTime = nextPractice?.FirstPractice?.time?.slice(0, 5);
+    const [firstPrHours, firstPrMin] = firstPrTime.split(":");
+    const firstAdjHours = (parseInt(firstPrHours) + 2) % 24;
+    firstPrFinalTime = `0${firstAdjHours}:${firstPrMin}`;
+  }
+
+  //get correct hour second pr
+  let secondPrFinalTime;
+  if (nextPractice?.SecondPractice?.time) {
+    const secondPrTime = nextPractice?.SecondPractice?.time?.slice(0, 5);
+    const [secondPrHours, secondPrMin] = secondPrTime.split(":");
+    const secondAdjHours = (parseInt(secondPrHours) + 2) % 24;
+    secondPrFinalTime = `0${secondAdjHours}:${secondPrMin}`;
+  }
+
+  //get correct hour third pr
+  let thirdPtFinalTime;
+  if (nextPractice?.ThirdPractice?.time) {
+    const thirdPrTime = nextPractice?.ThirdPractice?.time?.slice(0, 5);
+    const [thirdPrHours, thirdPrMin] = thirdPrTime.split(":");
+    const thirdAdjHours = (parseInt(thirdPrHours) + 2) % 24;
+    thirdPtFinalTime = `0${thirdAdjHours}:${thirdPrMin}`;
+  }
+
   return (
     <article className={`card ${style.practice}`}>
       <Image
@@ -50,23 +77,28 @@ export default function NextPractice({ races }) {
           <div className={style.row}>
             <p>1st</p>
             <p className="h4">
-              {firstPracticeDate},{" "}
-              {nextPractice?.FirstPractice?.time.slice(0, 5)}
+              {firstPracticeDate}, {firstPrFinalTime}
             </p>
           </div>
           <div className={style.row}>
             <p>2nd</p>
-            <p className="h4">
-              {secondPracticeDate},{" "}
-              {nextPractice?.SecondPractice?.time.slice(0, 5)}
-            </p>
+            {secondPracticeDate && nextPractice?.SecondPractice ? (
+              <p className="h4">
+                {secondPracticeDate}, {secondPrFinalTime}
+              </p>
+            ) : (
+              <p className="h4">No second practice</p>
+            )}
           </div>
           <div className={style.row}>
             <p>3rd</p>
-            <p className="h4">
-              {thirdPracticeDate},{" "}
-              {nextPractice?.ThirdPractice?.time.slice(0, 5)}
-            </p>
+            {thirdPracticeDate && nextPractice?.ThirdPractice ? (
+              <p className="h4">
+                {thirdPracticeDate}, {thirdPracticeDate}
+              </p>
+            ) : (
+              <p className="h4">No third practice</p>
+            )}
           </div>
         </div>
       )}

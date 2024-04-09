@@ -2,6 +2,12 @@ import Results from "../results/Results";
 import style from "./info.module.scss";
 
 export default function Info({ race }) {
+  //get correct hour
+  const raceTime = race?.time?.slice(0, 5);
+  const [hours, minutes] = raceTime.split(":");
+  const adjustedHours = (parseInt(hours) + 2) % 24;
+  const adjustedTime = `0${adjustedHours}:${minutes}`;
+
   return (
     <section className={style.info}>
       <div className={style.main}>
@@ -19,7 +25,7 @@ export default function Info({ race }) {
         <div className={style.row}>
           <p>Local Date and Time</p>
           <p className="gray">
-            {race?.date}, {race?.time?.slice(0, 5)}
+            {race?.date}, {adjustedTime}
           </p>
         </div>
         <div className={style.row}>

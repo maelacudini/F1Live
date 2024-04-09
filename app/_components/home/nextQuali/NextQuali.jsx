@@ -13,6 +13,12 @@ export default function NextQuali({ races }) {
   const nextQuali = upcomingQuali.length > 0 ? upcomingQuali[0] : null;
   const qualiDate = new Date(nextQuali?.Qualifying?.date).toDateString();
 
+  //get correct hour
+  const qualiTime = nextQuali?.time.slice(0, 5);
+  const [hours, minutes] = qualiTime.split(":");
+  const adjustedHours = (parseInt(hours) + 2) % 24;
+  const adjustedTime = `0${adjustedHours}:${minutes}`;
+
   return (
     <article className={`card ${style.quali}`}>
       <Image
@@ -43,7 +49,7 @@ export default function NextQuali({ races }) {
         </div>
         <div>
           <p>Time</p>
-          <p className="h4">{nextQuali?.Qualifying?.time.slice(0, 5)}</p>
+          <p className="h4">{adjustedTime}</p>
         </div>
       </div>
     </article>

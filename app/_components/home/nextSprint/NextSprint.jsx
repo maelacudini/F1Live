@@ -13,6 +13,12 @@ export default function NextSprint({ races }) {
   const nextSprint = upcomingSprint.length > 0 ? upcomingSprint[0] : null;
   const sprintDate = new Date(nextSprint?.Sprint?.date).toDateString();
 
+  //get correct hour
+  const sprintTime = nextSprint?.Sprint?.time?.slice(0, 5);
+  const [hours, minutes] = sprintTime.split(":");
+  const adjustedHours = (parseInt(hours) + 2) % 24;
+  const adjustedTime = `0${adjustedHours}:${minutes}`;
+
   return (
     <article className={`card ${style.sprint}`}>
       <Image
@@ -43,7 +49,7 @@ export default function NextSprint({ races }) {
         </div>
         <div>
           <p>Time</p>
-          <p className="h4">{nextSprint?.Sprint?.time?.slice(0, 5)}</p>
+          <p className="h4">{adjustedTime}</p>
         </div>
       </div>
     </article>
