@@ -17,7 +17,7 @@ export default function NextQuali({ races }) {
   const qualiTime = nextQuali?.time.slice(0, 5);
   const [hours, minutes] = qualiTime.split(":");
   const adjustedHours = (parseInt(hours) + 2) % 24;
-  const adjustedTime = `0${adjustedHours}:${minutes}`;
+  const adjustedTime = `${adjustedHours}:${minutes}`;
 
   return (
     <article className={`card ${style.quali}`}>

@@ -28,7 +28,7 @@ export default function NextPractice({ races }) {
     const firstPrTime = nextPractice?.FirstPractice?.time?.slice(0, 5);
     const [firstPrHours, firstPrMin] = firstPrTime.split(":");
     const firstAdjHours = (parseInt(firstPrHours) + 2) % 24;
-    firstPrFinalTime = `0${firstAdjHours}:${firstPrMin}`;
+    firstPrFinalTime = `${firstAdjHours}:${firstPrMin}`;
   }
 
   //get correct hour second pr
@@ -37,7 +37,7 @@ export default function NextPractice({ races }) {
     const secondPrTime = nextPractice?.SecondPractice?.time?.slice(0, 5);
     const [secondPrHours, secondPrMin] = secondPrTime.split(":");
     const secondAdjHours = (parseInt(secondPrHours) + 2) % 24;
-    secondPrFinalTime = `0${secondAdjHours}:${secondPrMin}`;
+    secondPrFinalTime = `${secondAdjHours}:${secondPrMin}`;
   }
 
   //get correct hour third pr
@@ -46,7 +46,7 @@ export default function NextPractice({ races }) {
     const thirdPrTime = nextPractice?.ThirdPractice?.time?.slice(0, 5);
     const [thirdPrHours, thirdPrMin] = thirdPrTime.split(":");
     const thirdAdjHours = (parseInt(thirdPrHours) + 2) % 24;
-    thirdPtFinalTime = `0${thirdAdjHours}:${thirdPrMin}`;
+    thirdPtFinalTime = `${thirdAdjHours}:${thirdPrMin}`;
   }
 
   return (

@@ -6,7 +6,7 @@ export default function Info({ race }) {
   const raceTime = race?.time?.slice(0, 5);
   const [hours, minutes] = raceTime.split(":");
   const adjustedHours = (parseInt(hours) + 2) % 24;
-  const adjustedTime = `0${adjustedHours}:${minutes}`;
+  const adjustedTime = `${adjustedHours}:${minutes}`;
 
   return (
     <section className={style.info}>
