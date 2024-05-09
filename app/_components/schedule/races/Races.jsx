@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { getDate, getTime } from "@/app/_utils/func";
 
 export default function Races({ races }) {
   const currentDate = new Date();
@@ -34,7 +35,8 @@ export default function Races({ races }) {
         className="swiper"
       >
         {races?.map((race, i) => {
-          const date = new Date(race?.date).toDateString();
+          const date = getDate(race?.date);
+          const time = getTime(race?.time?.slice(0, 5));
           return (
             <SwiperSlide key={i + race?.raceName} className="card">
               <div className={style.race}>
@@ -50,7 +52,7 @@ export default function Races({ races }) {
                     {race?.Circuit?.Location?.locality}
                   </p>
                   <p>
-                    {date}, {race?.time?.slice(0, 5)}
+                    {date}, {time}
                   </p>
                 </div>
               </div>

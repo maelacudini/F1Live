@@ -5,6 +5,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { v4 as uuidv4 } from "uuid";
+import Card from "./card/Card";
 
 export default function Practice({ races }) {
   const currentDate = new Date();
@@ -34,77 +35,40 @@ export default function Practice({ races }) {
         modules={[Navigation]}
         className="swiper"
       >
-        {races?.map((race, i) => {
-          const firstDate = new Date(race?.FirstPractice?.date).toDateString();
-          const secondDate = new Date(
-            race?.SecondPractice?.date
-          ).toDateString();
-          const thirdDate = new Date(race?.ThirdPractice?.date).toDateString();
-          return (
-            <span key={uuidv4()}>
+        {races?.map((race, i) => (
+          <span key={uuidv4()}>
+            {race?.FirstPractice && (
               <SwiperSlide key={uuidv4()} className="card">
-                <div className={style.practice}>
-                  <div className={style.intro}>
-                    <p>Round {race?.round}</p>
-                    {nextRace?.raceName === race?.raceName ? (
-                      <p className="yellow">Upcoming</p>
-                    ) : null}
-                  </div>
-                  <div>
-                    <p className="h4">
-                      {" "}
-                      At the {race?.Circuit?.circuitName},{" "}
-                      {race?.Circuit?.Location?.locality}
-                    </p>
-                    <p>
-                      {firstDate}, {race?.FirstPractice?.time?.slice(0, 5)}
-                    </p>
-                  </div>
-                </div>
+                <Card
+                  nextRace={nextRace}
+                  race={race}
+                  date={race?.FirstPractice?.date}
+                  time={race?.FirstPractice?.time?.slice(0, 5)}
+                />
               </SwiperSlide>
+            )}
+            {race?.SecondPractice && (
               <SwiperSlide key={uuidv4()} className="card">
-                <div className={style.practice}>
-                  <div className={style.intro}>
-                    <p>Round {race?.round}</p>
-                    {nextRace?.raceName === race?.raceName ? (
-                      <p className="yellow">Upcoming</p>
-                    ) : null}
-                  </div>
-                  <div>
-                    <p className="h4">
-                      {" "}
-                      At the {race?.Circuit?.circuitName},{" "}
-                      {race?.Circuit?.Location?.locality}
-                    </p>
-                    <p>
-                      {secondDate}, {race?.SecondPractice?.time?.slice(0, 5)}
-                    </p>
-                  </div>
-                </div>
+                <Card
+                  nextRace={nextRace}
+                  race={race}
+                  date={race?.SecondPractice?.date}
+                  time={race?.SecondPractice?.time?.slice(0, 5)}
+                />
               </SwiperSlide>
+            )}
+            {race?.ThirdPractice && (
               <SwiperSlide key={uuidv4()} className="card">
-                <div className={style.practice}>
-                  <div className={style.intro}>
-                    <p>Round {race?.round}</p>
-                    {nextRace?.raceName === race?.raceName ? (
-                      <p className="yellow">Upcoming</p>
-                    ) : null}
-                  </div>
-                  <div>
-                    <p className="h4">
-                      {" "}
-                      At the {race?.Circuit?.circuitName},{" "}
-                      {race?.Circuit?.Location?.locality}
-                    </p>
-                    <p>
-                      {thirdDate}, {race?.ThirdPractice?.time?.slice(0, 5)}
-                    </p>
-                  </div>
-                </div>
+                <Card
+                  nextRace={nextRace}
+                  race={race}
+                  date={race?.ThirdPractice?.date}
+                  time={race?.ThirdPractice?.time?.slice(0, 5)}
+                />
               </SwiperSlide>
-            </span>
-          );
-        })}
+            )}
+          </span>
+        ))}
       </Swiper>
     </section>
   );

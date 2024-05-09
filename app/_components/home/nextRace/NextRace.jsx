@@ -1,6 +1,7 @@
 import Image from "next/image";
 import style from "./races.module.scss";
 import image from "../../../../public/images/img3.jpg";
+import { getDate, getTime } from "@/app/_utils/func";
 
 export default async function NextRace({ races }) {
   const currentDate = new Date();
@@ -11,13 +12,8 @@ export default async function NextRace({ races }) {
   });
 
   const nextRace = upcomingRaces.length > 0 ? upcomingRaces[0] : null;
-  const nextRaceDate = new Date(nextRace?.date).toDateString();
-
-  //get correct hour
-  const raceTime = nextRace?.time.slice(0, 5);
-  const [hours, minutes] = raceTime.split(":");
-  const adjustedHours = (parseInt(hours) + 2) % 24;
-  const adjustedTime = `${adjustedHours}:${minutes}`;
+  const nextRaceDate = getDate(nextRace?.date);
+  let correctHour = getTime(nextRace?.time.slice(0, 5));
 
   return (
     <article className={`card ${style.races}`}>
@@ -53,7 +49,7 @@ export default async function NextRace({ races }) {
           </div>
           <div>
             <p>Time</p>
-            <p className="h4">{adjustedTime}</p>
+            <p className="h4">{correctHour}</p>
           </div>
           <div>
             <p>Location</p>

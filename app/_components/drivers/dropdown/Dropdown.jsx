@@ -1,7 +1,9 @@
+import { getDate } from "@/app/_utils/func";
 import style from "./drop.module.scss";
 
 export default function Dropdown({ info }) {
   const driver = info?.Driver;
+  let dateOfBirth = getDate(driver?.dateOfBirth);
 
   return (
     <div className={style.drop}>
@@ -19,7 +21,7 @@ export default function Dropdown({ info }) {
       </div>
       <div>
         <p>Date of birth</p>
-        <p className="gray">{driver?.dateOfBirth}</p>
+        <p className="gray">{dateOfBirth}</p>
       </div>
       <div>
         <p>Nationality</p>

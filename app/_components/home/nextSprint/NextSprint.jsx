@@ -1,6 +1,7 @@
 import Image from "next/image";
 import style from "./sprint.module.scss";
 import image from "../../../../public/images/img4.jpg";
+import { getDate, getTime } from "@/app/_utils/func";
 
 export default function NextSprint({ races }) {
   const currentDate = new Date();
@@ -11,13 +12,8 @@ export default function NextSprint({ races }) {
   });
 
   const nextSprint = upcomingSprint.length > 0 ? upcomingSprint[0] : null;
-  const sprintDate = new Date(nextSprint?.Sprint?.date).toDateString();
-
-  //get correct hour
-  const sprintTime = nextSprint?.Sprint?.time?.slice(0, 5);
-  const [hours, minutes] = sprintTime.split(":");
-  const adjustedHours = (parseInt(hours) + 2) % 24;
-  const adjustedTime = `${adjustedHours}:${minutes}`;
+  const sprintDate = getDate(nextSprint?.Sprint?.date);
+  const sprintTime = getTime(nextSprint?.Sprint?.time?.slice(0, 5));
 
   return (
     <article className={`card ${style.sprint}`}>
@@ -42,16 +38,20 @@ export default function NextSprint({ races }) {
       <p className="h3">
         Next <span className="yellow">sprint</span> round
       </p>
-      <div className={style.info}>
-        <div>
-          <p>Date</p>
-          <p className="h4">{sprintDate}</p>
+      {nextSprint ? (
+        <div className={style.info}>
+          <div>
+            <p>Date</p>
+            <p className="h4">{sprintDate}</p>
+          </div>
+          <div>
+            <p>Time</p>
+            <p className="h4">{sprintTime}</p>
+          </div>
         </div>
-        <div>
-          <p>Time</p>
-          <p className="h4">{adjustedTime}</p>
-        </div>
-      </div>
+      ) : (
+        <p>No upcoming sprint round</p>
+      )}
     </article>
   );
 }

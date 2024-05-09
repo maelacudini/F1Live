@@ -1,6 +1,7 @@
 import Image from "next/image";
 import style from "./practice.module.scss";
 import image from "../../../../public/images/img1.jpg";
+import { getDate, getTime } from "@/app/_utils/func";
 
 export default function NextPractice({ races }) {
   const currentDate = new Date();
@@ -12,42 +13,17 @@ export default function NextPractice({ races }) {
 
   const nextPractice = upcomingPractice.length > 0 ? upcomingPractice[0] : null;
 
-  const firstPracticeDate = new Date(
-    nextPractice?.FirstPractice?.date
-  ).toDateString();
-  const secondPracticeDate = new Date(
-    nextPractice?.SecondPractice?.date
-  ).toDateString();
-  const thirdPracticeDate = new Date(
-    nextPractice?.ThirdPractice?.date
-  ).toDateString();
+  //get correct date/time first pr
+  let firstPracticeDate = getDate(nextPractice?.FirstPractice?.date);
+  let firstPrTime = getTime(nextPractice?.FirstPractice?.time.slice(0, 5));
 
-  //get correct hour first pr
-  let firstPrFinalTime;
-  if (nextPractice?.FirstPractice?.time) {
-    const firstPrTime = nextPractice?.FirstPractice?.time?.slice(0, 5);
-    const [firstPrHours, firstPrMin] = firstPrTime.split(":");
-    const firstAdjHours = (parseInt(firstPrHours) + 2) % 24;
-    firstPrFinalTime = `${firstAdjHours}:${firstPrMin}`;
-  }
+  //get correct date/time second pr
+  let secondPracticeDate = getDate(nextPractice?.SecondPractice?.date);
+  let secondPrTime = getTime(nextPractice?.SecondPractice?.time.slice(0, 5));
 
-  //get correct hour second pr
-  let secondPrFinalTime;
-  if (nextPractice?.SecondPractice?.time) {
-    const secondPrTime = nextPractice?.SecondPractice?.time?.slice(0, 5);
-    const [secondPrHours, secondPrMin] = secondPrTime.split(":");
-    const secondAdjHours = (parseInt(secondPrHours) + 2) % 24;
-    secondPrFinalTime = `${secondAdjHours}:${secondPrMin}`;
-  }
-
-  //get correct hour third pr
-  let thirdPtFinalTime;
-  if (nextPractice?.ThirdPractice?.time) {
-    const thirdPrTime = nextPractice?.ThirdPractice?.time?.slice(0, 5);
-    const [thirdPrHours, thirdPrMin] = thirdPrTime.split(":");
-    const thirdAdjHours = (parseInt(thirdPrHours) + 2) % 24;
-    thirdPtFinalTime = `${thirdAdjHours}:${thirdPrMin}`;
-  }
+  //get correct date/time third pr
+  let thirdPracticeDate = getDate(nextPractice?.ThirdPractice?.date);
+  let thirdPrTime = getTime(nextPractice?.ThirdPractice?.time.slice(0, 5));
 
   return (
     <article className={`card ${style.practice}`}>
@@ -72,37 +48,30 @@ export default function NextPractice({ races }) {
       <p className="h3">
         Next <span className="yellow">practice</span> rounds
       </p>
-      {nextPractice && (
+      {nextPractice ? (
         <div className={style.practices}>
           <div className={style.row}>
             <p>1st</p>
             <p className="h4">
-              {firstPracticeDate}, {firstPrFinalTime}
+              {firstPracticeDate}, {firstPrTime}
             </p>
           </div>
           <div className={style.row}>
             <p>2nd</p>
-            {secondPracticeDate && nextPractice?.SecondPractice ? (
-              <p className="h4">
-                {secondPracticeDate}, {secondPrFinalTime}
-              </p>
-            ) : (
-              <p className="h4">No second practice</p>
-            )}
+            <p className="h4">
+              {secondPracticeDate}, {secondPrTime}
+            </p>
           </div>
           <div className={style.row}>
             <p>3rd</p>
-            {thirdPracticeDate && nextPractice?.ThirdPractice ? (
-              <p className="h4">
-                {thirdPracticeDate}, {thirdPracticeDate}
-              </p>
-            ) : (
-              <p className="h4">No third practice</p>
-            )}
+            <p className="h4">
+              {thirdPracticeDate}, {thirdPrTime}
+            </p>
           </div>
         </div>
+      ) : (
+        <p>No upcoming practice rounds.</p>
       )}
-      {!nextPractice && <p>No upcoming practice round.</p>}
     </article>
   );
 }
