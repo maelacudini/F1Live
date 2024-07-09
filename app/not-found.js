@@ -5,6 +5,7 @@ export default function NotFound() {
         <section className='notFound'>
             <h2>Not Found</h2>
             <p>Could not find requested resource</p>
+            <p>testing</p>
             <Link className='btn' href="/">Return Home</Link>
         </section>
     )
