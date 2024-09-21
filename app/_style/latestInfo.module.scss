@@ -1,0 +1,16 @@
+@use "imports" as im;
+
+.info {
+    width: 100%;
+    max-width: im.$max-width;
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        border-bottom: 1px solid im.$gray-25;
+        padding: 2rem 0rem;
+    }
+}

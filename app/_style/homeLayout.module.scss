@@ -1,0 +1,11 @@
+@use "imports" as im;
+
+.main {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: im.$max-width;
+    width: 100%;
+    margin: 0 auto;
+}

@@ -1,6 +1,6 @@
 'use client'
-import './_style/globals.css'
-import Header from './_components/common/header/Header'
+import './_style/globals.scss'
+import Header from './_components/common/Header'
 
 export default function GlobalError({ error, reset }) {
     return (

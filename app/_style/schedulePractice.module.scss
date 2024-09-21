@@ -1,0 +1,12 @@
+@use "imports" as im;
+
+.practices {
+    .title {
+        margin: 2.5lvh 5lvw;
+
+        p {
+            max-width: im.$max-width;
+            margin: 0 auto;
+        }
+    }
+}

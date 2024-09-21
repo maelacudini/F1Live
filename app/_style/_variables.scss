@@ -1,0 +1,32 @@
+/*colors*/
+$yellow: #cedc00;
+$violet: #ba5fff;
+$white: #ececec;
+$gray-100: #aaaaaa;
+$gray-25: #aaaaaa25;
+$gray-15: #aaaaaa15;
+$black: #0e0e0e;
+
+/*font sizes*/
+$font-sm: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
+$font-md: clamp(1.25rem, 0.8594rem + 1.25vw, 1.5625rem);
+$font-lg: clamp(1.875rem, 1.0938rem + 2.5vw, 2.5rem);
+$font-xl: clamp(2.5rem, 1.7188rem + 2.5vw, 3.125rem);
+$font-xxl: clamp(3.125rem, 0.7813rem + 7.5vw, 5rem);
+
+/*font weights*/
+$font-regular: 300;
+$font-bold: 600;
+
+/*border radius*/
+$border-sm: 1rem;
+$border-md: 2rem;
+$border-lg: 4rem;
+
+/*padding*/
+$padding-sm: 1rem;
+$padding-md: 2rem;
+$padding-lg: 4rem;
+
+/*max-width*/
+$max-width: 90rem;

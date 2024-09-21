@@ -1,0 +1,23 @@
+@mixin min-height($value) {
+    height: $value;
+
+    @supports (height: #{$value}lvh) {
+        height: #{$value}lvh;
+    }
+}
+
+@mixin px-to-rem($property, $px-value) {
+    $rem-value: $px-value / 16;
+    #{$property}: #{$rem-value}rem;
+}
+
+@mixin lvh($height) {
+    height: $height + vh;
+    height: $height + lvh;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

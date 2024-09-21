@@ -1,0 +1,42 @@
+@use "imports" as im;
+
+.info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: im.$max-width;
+    margin: 0 auto;
+    padding: 2rem 0rem;
+    border-bottom: 1px solid im.$gray-25;
+    overflow: hidden;
+    transition: height 0.3s, padding 0.3s;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        bottom: 0;
+        background-color: #aaaaaa15;
+        transition: top 0.3s;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    &:hover {
+        padding: 2rem;
+
+        &::after {
+            top: 0;
+        }
+    }
+}

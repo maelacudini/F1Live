@@ -1,0 +1,10 @@
+@use "imports" as im;
+
+.intro {
+    margin: 0 auto;
+    width: 100%;
+    max-width: im.$max-width;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

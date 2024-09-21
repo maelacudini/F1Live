@@ -1,0 +1,132 @@
+@use "imports" as im;
+
+/* custom bg of highlighted text */
+::selection {
+    background-color: im.$yellow;
+    color: im.$black;
+}
+
+::-moz-selection {
+    background-color: im.$yellow;
+    color: im.$black;
+}
+
+::webkit-selection {
+    background-color: im.$yellow;
+    color: im.$black;
+}
+
+/*hide scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*general style*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: im.$black;
+    color: im.$white;
+    cursor: default;
+}
+
+/*headings and others*/
+p,
+a,
+button {
+    font-size: im.$font-sm;
+    font-weight: im.$font-regular;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+h4,
+.h4 {
+    font-size: im.$font-md;
+    line-height: 1.1;
+    font-weight: im.$font-bold;
+}
+
+h3,
+.h3 {
+    font-size: im.$font-lg;
+    line-height: 1.1;
+    font-weight: im.$font-bold;
+}
+
+h2,
+.h2 {
+    font-size: im.$font-xl;
+    line-height: 1.1;
+    font-weight: im.$font-bold;
+}
+
+h1,
+.h1 {
+    font-size: im.$font-xxl;
+    line-height: 1.1;
+    font-weight: im.$font-bold;
+}
+
+/*buttons and links*/
+.btn {
+    background-color: transparent;
+    border: im.px-to-rem(1) solid im.$gray-25;
+    white-space: nowrap;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: im.$border-md;
+    width: fit-content;
+    transition: all 0.3s;
+    @include im.flex-center;
+}
+
+.btn:hover {
+    background-color: im.$gray-15;
+}
+
+.link {
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: im.$gray-100;
+}
+
+/*card*/
+.card {
+    border-radius: im.$border-md;
+    padding: im.$padding-md;
+    overflow: hidden;
+}
+
+.card:hover {
+    outline: 1px solid im.$gray-25;
+    outline-offset: -1px;
+}
+
+/*section margin*/
+.margin {
+    margin: 10lvh 5lvw;
+}
+
+/*not found, error, loading*/
+.notFound,
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    margin: 10lvh 5lvw;
+    @include im.min-height(50);
+}

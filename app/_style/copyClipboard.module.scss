@@ -1,0 +1,9 @@
+@use "imports" as im;
+
+.copy {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+    width: 100%;
+    max-width: im.$max-width;
+}

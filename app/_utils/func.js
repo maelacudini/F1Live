@@ -29,3 +29,10 @@ export function getDate(date) {
         return "No round";
     }
 }
+
+//find upcoming event index
+export function getUpcomingEventIndex(eventList, nextEvent) {
+    return eventList.findIndex(
+        (event) => event.raceName === nextEvent?.raceName
+    );
+}

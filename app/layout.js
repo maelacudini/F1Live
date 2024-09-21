@@ -1,11 +1,12 @@
 import { Figtree } from "next/font/google";
-import "./_style/globals.css";
+import "./_style/globals.scss";
 import "./_style/swiper.css";
-import Header from "./_components/common/header/Header";
-import Footer from "./_components/common/footer/Footer";
-import Cursor from "./_components/common/cursor/Cursor";
+import Header from "./_components/common/Header";
+import Footer from "./_components/common/Footer";
+import Cursor from "./_components/common/Cursor";
 import { CursorProvider } from "./_context/CursorContext";
-import SlidingText from "./_components/common/slidingText/SlidingText";
+import SlidingText from "./_components/common/SlidingText";
+import { GlobalLayout } from "./_components/layouts/GlobalLayout";
 
 const font = Figtree({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700", "800", "900"] });
 
@@ -72,10 +73,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={font.className}>
         <CursorProvider>
-          <Header />
           <Cursor />
-          {children}
-          <Footer />
+          <GlobalLayout>
+            <Header />
+            {children}
+            <Footer />
+          </GlobalLayout>
           <SlidingText />
         </CursorProvider>
       </body>

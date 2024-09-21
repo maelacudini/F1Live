@@ -1,0 +1,30 @@
+@use "imports" as im;
+
+.header {
+    position: relative;
+    @include im.flex-center;
+    z-index: 99;
+
+    nav {
+        .links {
+            display: flex;
+            gap: 1rem;
+
+            div {
+                position: relative;
+
+                .dot {
+                    position: absolute;
+                    bottom: -0.25rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 0.25rem;
+                    width: 0.25rem;
+                    border-radius: 2rem;
+                    background-color: #cecece;
+                    transition: scale 0.3s;
+                }
+            }
+        }
+    }
+}
